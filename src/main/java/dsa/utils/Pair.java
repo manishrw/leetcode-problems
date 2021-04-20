@@ -3,37 +3,37 @@ package dsa.utils;
 import java.util.Objects;
 
 public class Pair<X, Y> {
-    private X left;
-    private Y right;
+    private X key;
+    private Y value;
 
-    public Pair(final X left, final Y right) {
-        this.left = left;
-        this.right = right;
+    public Pair(final X key, final Y value) {
+        this.key = key;
+        this.value = value;
     }
 
-    public X getLeft() {
-        return left;
+    public X getKey() {
+        return key;
     }
 
-    public Y getRight() {
-        return right;
+    public Y getValue() {
+        return value;
     }
 
     public Pair<X, Y> left(X key) {
-        this.left = key;
+        this.key = key;
         return this;
     }
 
     public Pair<X, Y> right(Y value) {
-        this.right = value;
+        this.value = value;
         return this;
     }
 
     @Override
     public String toString() {
         return "{" +
-            " left='" + left + "'" +
-            ", right='" + right + "'" +
+            " left='" + key + "'" +
+            ", right='" + value + "'" +
             "}";
     }
 
@@ -45,12 +45,12 @@ public class Pair<X, Y> {
             return false;
         }
         Pair<X, Y> pair = (Pair<X, Y>) o;
-        return left == pair.left && right == pair.right;
+        return key == pair.key && value == pair.value;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(left, right);
+        return Objects.hash(key, value);
     }
 
 }
